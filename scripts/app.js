@@ -3,7 +3,7 @@
   'use strict';
   
   angular
-      .module('app', ['ngRoute'])
+      .module('app', ['ngRoute', 'mgcrea.ngStrap'])
       .config(config)
       .run(run);
   
