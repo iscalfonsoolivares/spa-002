@@ -3,13 +3,13 @@
   'use strict';
 
   angular
-      .module('app')
+      .module('app.core')
       .directive('colorRed', colorRed);
 
   function colorRed() {
 
     return function(scope, element, attrs){
-      element.css("color", "red");
+      element.css("color", "blue");
     }
     
   }
