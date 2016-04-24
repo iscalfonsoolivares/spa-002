@@ -5,7 +5,10 @@
   // Modules
   
   angular
-      .module('app.core', [ 'mgcrea.ngStrap', 'restangular' ]);
+      .module('app.widgets', [ 'mgcrea.ngStrap' ]);
+  
+  angular
+      .module('app.core', [ 'app.widgets', 'restangular' ]);
   
   // Main module
   
