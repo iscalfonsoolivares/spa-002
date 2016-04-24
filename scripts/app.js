@@ -2,8 +2,15 @@
   
   'use strict';
   
+  // Modules
+  
   angular
-      .module('app', ['ngRoute', 'mgcrea.ngStrap'])
+      .module('app.core', [ 'mgcrea.ngStrap', 'restangular' ]);
+  
+  // Main module
+  
+  angular
+      .module('app', ['ngRoute', 'app.core'])
       .config(config)
       .run(run);
   
@@ -12,16 +19,14 @@
 
         // route for the home page
         .when('/home', {
-            templateUrl : 'assets/js/app/controllers/views/hello_view.html',
-            controller  : 'HelloController',
-
+            templateUrl : 'assets/js/app/core/controllers/views/hello_view.html',
+            controller  : 'HelloController'
         })
 
         // route for the about page
         .when('/about', {
-            templateUrl : 'assets/js/app/controllers/views/hello_view.html',
-            controller  : 'HelloController',
-
+            templateUrl : 'assets/js/app/core/controllers/views/hello_view.html',
+            controller  : 'HelloController'
         })
     
         .otherwise({
