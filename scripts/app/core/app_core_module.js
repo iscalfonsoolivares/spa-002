@@ -4,6 +4,5 @@
 
   angular
       .module('app.core', [ 'app.widgets.common', 'restangular' ]);
-  
-  
+    
 })();    

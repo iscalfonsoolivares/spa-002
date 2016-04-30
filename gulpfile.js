@@ -46,7 +46,13 @@ files.vendorJs = [
 
 files.appJs = ['scripts/**/*module.js', 'scripts/**/*.js','scripts/*.js'];
 
-files.appCss = [ 'styles/main.css' ];
+files.appCss = [ 
+                'styles/typography.css',
+                'styles/global_styles.css',
+                'styles/layout.css',
+                'styles/navegation.css',
+                'styles/app/widgets/common/my_tests.css'
+               ];
 
 files.appJson = 'scripts/**/*.json';
 
@@ -142,7 +148,10 @@ gulp.task('minify-css', function () {
   var stream = gulp.src( files.appCss )
     .pipe(plugins.sourcemaps.init({ loadMaps: true }))
     .pipe(plugins.concat('styles.min.css'))
-    .pipe(plugins.autoprefixer()) 
+    .pipe(plugins.autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		})) 
     .pipe(plugins.cleanCss())    
     .pipe(plugins.header(getCopyrightVersion(), {version: getVersion()}))
     .pipe(plugins.sourcemaps.write('./'))
