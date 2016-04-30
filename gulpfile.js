@@ -148,7 +148,10 @@ gulp.task('minify-css', function () {
   var stream = gulp.src( files.appCss )
     .pipe(plugins.sourcemaps.init({ loadMaps: true }))
     .pipe(plugins.concat('styles.min.css'))
-    .pipe(plugins.autoprefixer()) 
+    .pipe(plugins.autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		})) 
     .pipe(plugins.cleanCss())    
     .pipe(plugins.header(getCopyrightVersion(), {version: getVersion()}))
     .pipe(plugins.sourcemaps.write('./'))
