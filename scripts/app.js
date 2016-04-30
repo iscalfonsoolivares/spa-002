@@ -22,13 +22,13 @@
 
         // route for the home page
         .when('/home', {
-            templateUrl : 'assets/js/app/core/controllers/views/hello_view.html',
+            templateUrl : 'js/app/core/controllers/views/hello_view.html',
             controller  : 'HelloController'
         })
 
         // route for the about page
         .when('/about', {
-            templateUrl : 'assets/js/app/core/controllers/views/hello_view.html',
+            templateUrl : 'js/app/core/controllers/views/hello_view.html',
             controller  : 'HelloController'
         })
     
