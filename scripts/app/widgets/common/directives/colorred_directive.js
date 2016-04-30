@@ -3,16 +3,15 @@
   'use strict';
 
   angular
-      .module('app.core')
+      .module('app.widgets.common')
       .directive('colorRed', colorRed);
 
   function colorRed() {
 
     return function(scope, element, attrs){
-      element.css("color", "blue");
-    }
+      element.css("color", "red");
+    };
     
   }
-  
   
 })();    
