@@ -46,7 +46,13 @@ files.vendorJs = [
 
 files.appJs = ['scripts/**/*module.js', 'scripts/**/*.js','scripts/*.js'];
 
-files.appCss = [ 'styles/main.css' ];
+files.appCss = [ 
+                'styles/typography.css',
+                'styles/global_styles.css',
+                'styles/layout.css',
+                'styles/navegation.css',
+                'styles/app_widgets_common.css'
+               ];
 
 files.appJson = 'scripts/**/*.json';
 
