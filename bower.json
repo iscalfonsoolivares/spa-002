@@ -22,6 +22,7 @@
     "bootstrap": "^3.3.6",
     "angular-strap": "^2.3.8",
     "restangular": "^1.5.2",
-    "angular-motion": "^0.4.4"
+    "angular-motion": "^0.4.4",
+    "angular-smart-table": "^2.1.8"
   }
 }
