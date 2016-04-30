@@ -51,7 +51,7 @@ files.appCss = [
                 'styles/global_styles.css',
                 'styles/layout.css',
                 'styles/navegation.css',
-                'styles/app_widgets_common.css'
+                'styles/app/widgets/common/my_tests.css'
                ];
 
 files.appJson = 'scripts/**/*.json';
