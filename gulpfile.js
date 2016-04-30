@@ -186,7 +186,7 @@ gulp.task('default', ['vendor-copy-fonts', 'vendor-concat-css', 'vendor-concat-j
  * 
  */
 
-gulp.task('jslint', function () {
+gulp.task('jshint', function () {
     gulp.src('scripts/**/*.js')
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter());

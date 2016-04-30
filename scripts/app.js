@@ -2,14 +2,6 @@
   
   'use strict';
   
-  // Modules
-  
-  angular
-      .module('app.widgets', [ 'mgcrea.ngStrap' ]);
-  
-  angular
-      .module('app.core', [ 'app.widgets', 'restangular' ]);
-  
   // Main module
   
   angular
@@ -34,7 +26,7 @@
     
         .otherwise({
           redirectTo: '/home'
-        })    
+        });    
 
   }
   
