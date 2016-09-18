@@ -14,14 +14,8 @@
 
         // route for the home page
         .when('/home', {
-            templateUrl : 'js/app/core/controllers/views/hello_view.html',
-            controller  : 'HelloController'
-        })
-
-        // route for the about page
-        .when('/about', {
-            templateUrl : 'js/app/core/controllers/views/hello_view.html',
-            controller  : 'HelloController'
+            templateUrl : 'js/app/core/controllers/views/home_view.html',
+            controller  : 'homeController'
         })
     
         .otherwise({

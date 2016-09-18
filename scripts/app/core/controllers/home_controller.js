@@ -4,11 +4,11 @@
 
   angular
       .module('app.core')
-      .controller('HelloController', HelloController);
+      .controller('homeController', homeController);
   
-  HelloController.$inject = ['$scope'];  
+  homeController.$inject = ['$scope'];  
 
-  function HelloController($scope) {
+  function homeController($scope) {
 
     $scope.hello = 'this is working';
     
