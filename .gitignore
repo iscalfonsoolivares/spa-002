@@ -4,3 +4,4 @@ dist/js
 dist/css
 dist/fonts
 .DS_Store
+npm-debug.log
