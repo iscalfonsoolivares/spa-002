@@ -23,32 +23,27 @@ files.vendorFonts = [
 
 files.vendorCss = [
                     'bower_components/bootstrap/dist/css/bootstrap.min.css',
-                    'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
-                    'bower_components/bootstrap-additions/dist/bootstrap-additions.min.css',
-                    'bower_components/angular-motion/dist/angular-motion.min.css',
+                    // 'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
+                    // 'bower_components/bootstrap-additions/dist/bootstrap-additions.min.css',
+                    // 'bower_components/angular-motion/dist/angular-motion.min.css',
                   ];
 
 files.vendorJs = [    
-                    'bower_components/lodash/dist/lodash.min.js',
+                    // 'bower_components/lodash/dist/lodash.min.js',  
+                    'bower_components/jquery/dist/jquery.min.js',
+                    'bower_components/bootstrap/dist/js/bootstrap.min.js',
                     'bower_components/angular/angular.min.js',
                     'bower_components/angular-route/angular-route.min.js',
-                    'bower_components/angular-animate/angular-animate.min.js',
-                    'bower_components/angular-strap/dist/angular-strap.min.js',
-                    'bower_components/angular-strap/dist/angular-strap.tpl.min.js',
-                    'bower_components/restangular/dist/restangular.min.js',
-                    'bower_components/angular-smart-table/dist/smart-table.min.js',
-                    'bower_components/ngstorage/ngStorage.min.js'
+                    // 'bower_components/angular-animate/angular-animate.min.js',
+                    // 'bower_components/angular-strap/dist/angular-strap.min.js',
+                    // 'bower_components/angular-strap/dist/angular-strap.tpl.min.js',
+                    // 'bower_components/restangular/dist/restangular.min.js',
+                    'bower_components/angular-smart-table/dist/smart-table.min.js'
                   ];
 
 files.appJs = ['scripts/**/*module.js', 'scripts/**/*.js','scripts/*.js'];
 
-files.appCss = [ 
-                'styles/typography.css',
-                'styles/global_styles.css',
-                'styles/layout.css',
-                'styles/navegation.css',
-                'styles/app/widgets/common/my_tests.css'
-               ];
+files.appCss = [];
 
 files.appJson = 'scripts/**/*.json';
 
@@ -80,7 +75,7 @@ gulp.task('vendor-copy-fonts', function() {
 gulp.task("vendor-concat-css", function() {
   
   var stream = gulp.src(files.vendorCss)
-    .pipe(plugins.concat('vendor.min.css'))  
+    .pipe(plugins.concat('vendor.css'))  
     .pipe(gulp.dest('dist/css/'))
     .pipe(plugins.connect.reload());    
   
@@ -91,7 +86,7 @@ gulp.task("vendor-concat-css", function() {
 gulp.task("vendor-concat-js", function() {
   
   var stream = gulp.src(files.vendorJs)
-    .pipe(plugins.concat('vendor.min.js'))  
+    .pipe(plugins.concat('vendor.js'))  
     .pipe(gulp.dest('dist/js/'))
     .pipe(plugins.connect.reload());    
   
@@ -104,7 +99,7 @@ gulp.task('app-minify-js', ['minify-templates','copy-json'], function (){
     .pipe(plugins.sourcemaps.init({ loadMaps: true }))
     .pipe(plugins.ngAnnotate())
     .pipe(plugins.uglify())
-    .pipe(plugins.concat('app.min.js'))
+    .pipe(plugins.concat('app.js'))
     .pipe(plugins.header(getCopyright(), {version: getVersion()}))
     .pipe(plugins.sourcemaps.write('./'))
     .pipe(gulp.dest('dist/js/'))
@@ -145,7 +140,7 @@ gulp.task('minify-css', function () {
   
   var stream = gulp.src( files.appCss )
     .pipe(plugins.sourcemaps.init({ loadMaps: true }))
-    .pipe(plugins.concat('styles.min.css'))
+    .pipe(plugins.concat('styles.css'))
     .pipe(plugins.autoprefixer({
 			browsers: ['last 2 versions'],
 			cascade: false

@@ -3,6 +3,6 @@
   'use strict';
 
   angular
-      .module('app.core', [ 'app.widgets.common', 'restangular' ]);
+      .module('app.core', [ 'app.widgets.common', 'smart-table' ]);
     
 })();    
