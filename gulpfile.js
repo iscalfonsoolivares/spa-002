@@ -29,26 +29,21 @@ files.vendorCss = [
                   ];
 
 files.vendorJs = [    
-                    'bower_components/lodash/dist/lodash.min.js',
+                    'bower_components/lodash/dist/lodash.min.js',  
+                    'bower_components/jquery/dist/jquery.min.js',
+                    'bower_components/bootstrap/dist/js/bootstrap.min.js',
                     'bower_components/angular/angular.min.js',
                     'bower_components/angular-route/angular-route.min.js',
                     'bower_components/angular-animate/angular-animate.min.js',
                     'bower_components/angular-strap/dist/angular-strap.min.js',
                     'bower_components/angular-strap/dist/angular-strap.tpl.min.js',
                     'bower_components/restangular/dist/restangular.min.js',
-                    'bower_components/angular-smart-table/dist/smart-table.min.js',
-                    'bower_components/ngstorage/ngStorage.min.js'
+                    'bower_components/angular-smart-table/dist/smart-table.min.js'
                   ];
 
 files.appJs = ['scripts/**/*module.js', 'scripts/**/*.js','scripts/*.js'];
 
-files.appCss = [ 
-                'styles/typography.css',
-                'styles/global_styles.css',
-                'styles/layout.css',
-                'styles/navegation.css',
-                'styles/app/widgets/common/my_tests.css'
-               ];
+files.appCss = [];
 
 files.appJson = 'scripts/**/*.json';
 

@@ -11,13 +11,13 @@
   function requestService( $http, $q ) {
     
     return {
-      getContactsData: getContactsData
+      getData: getData
     }
     
-    function getContactsData(){
+    function getData(){
       
       var request = $http({
-          url: 'assets/js/app/core/services/data/contacts.json',
+          url: 'js/app/core/services/data/users.json',
           method: 'GET'
       });      
 
