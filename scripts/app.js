@@ -15,19 +15,22 @@
         // route for the home page
         .when('/home', {
             templateUrl : 'js/app/core/controllers/views/home_view.html',
-            controller  : 'homeController'
+            controller  : 'homeController',
+            controllerAs: 'vm'
         })
     
         // route for the home page
         .when('/about-us', {
             templateUrl : 'js/app/core/controllers/views/about_us_view.html',
-            controller  : 'aboutUsController'
+            controller  : 'aboutUsController',
+            controllerAs: 'vm'
         })
     
         // route for the home page
         .when('/items', {
             templateUrl : 'js/app/core/controllers/views/items_view.html',
-            controller  : 'itemsController'
+            controller  : 'itemsController',
+            controllerAs: 'vm'
         })
     
         .otherwise({
