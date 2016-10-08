@@ -6,21 +6,18 @@
     <div class="row">
       <div class="col-md-12">
         
-  <div id="no-more-tables" st-table="displayedItems" st-safe-src="users" st-set-filter="applyFilters">
+  <div id="items-table" st-table="displayedItems" st-safe-src="users" st-set-filter="applyFilters">
   
     <div>    
-      <label class="cb-filter">
+      <input st-search="" placeholder="global search" class="input-sm form-control" type="search"/>      
+      <label>
           <input type="checkbox" st-custom-filter="female" st-custom-filter-column="gender">
           <span>Famele</span>
       </label>
-      <label class="cb-filter">      
-          <input type="checkbox" st-custom-filter="male" st-custom-filter-column="gender">
-          <span>Male</span>
-      </label>        
-      <input st-search="" placeholder="global search" class="input-sm form-control" type="search"/>
+
     </div>
     
-    <table class="table table-volunteers table-striped">
+    <table class="table table-striped">
         <thead>
         <tr>
             <!--
