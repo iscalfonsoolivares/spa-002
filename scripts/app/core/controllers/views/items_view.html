@@ -1,0 +1,59 @@
+<div id="items-page" >
+  
+  <nav class="navbar navbar-inverse navbar-fixed-top" ng-include src="'js/app/core/templates/nav_primary.html'"></nav>  
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        
+  <div id="items-table" st-table="displayedItems" st-safe-src="users" st-set-filter="applyFilters">
+  
+    <div>    
+      <input st-search="" placeholder="global search" class="input-sm form-control" type="search"/>      
+      <label>
+          <input type="checkbox" st-custom-filter="female" st-custom-filter-column="gender">
+          <span>Famele</span>
+      </label>
+
+    </div>
+    
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <!--
+            <th>Record Id</th>
+            -->  
+            <th st-sort="name" st-sort-default="true" st-skip-natural="true" class="st-sort">Name</th>
+            <!--
+            <th>Payroll Name</th>          
+            -->
+            <th st-sort="gender" st-sort-default="true" st-skip-natural="true" class="st-sort">Gender</th>
+            <th >Company</th>
+            <th >E-mail</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in displayedItems">
+            <td data-title="Name" >{{row.name || '-'}}</td>
+            <td data-title="Gender" >{{row.gender || '-'}}</td>
+            <td data-title="Company" >{{row.company || '-'}}</td>
+            <td data-title="E-Mail" >{{row.email || '-'}}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7" class="table-pagination" st-items-by-page="10" st-pagination="" st-template="js/app/core/templates/pagination.html">
+
+                </td>
+            </tr>
+        </tfoot>
+    
+    </table>         
+      </div>
+    </div>    
+  </div>
+  
+</div>
+
+<footer class="footer" ng-include src="'js/app/core/templates/footer.html'">
+</footer>    
