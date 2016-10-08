@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-12">
         
-  <div id="#table" st-table="displayedItems" st-safe-src="users" st-set-filter="applyFilters">
+  <div id="no-more-tables" st-table="displayedItems" st-safe-src="users" st-set-filter="applyFilters">
   
     <div>    
       <label class="cb-filter">
@@ -37,10 +37,10 @@
         </thead>
         <tbody>
         <tr ng-repeat="row in displayedItems">
-            <td>{{row.name || '-'}}</td>
-            <td>{{row.gender || '-'}}</td>
-            <td>{{row.company || '-'}}</td>
-            <td>{{row.email || '-'}}</td>
+            <td data-title="Name" >{{row.name || '-'}}</td>
+            <td data-title="Gender" >{{row.gender || '-'}}</td>
+            <td data-title="Company" >{{row.company || '-'}}</td>
+            <td data-title="E-Mail" >{{row.email || '-'}}</td>
         </tr>
         </tbody>
         <tfoot>
