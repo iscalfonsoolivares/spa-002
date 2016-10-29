@@ -13,9 +13,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active" ><a href="#/home">Home</a></li>
-        <li><a href="#/items">Items</a></li>
-        <li><a href="#/about-us">About Us</a></li>
+        <li ng-class="vm.isHome ? 'active' : ''" ><a href="#/home">Home</a></li>
+        <li ng-class="vm.isItems ? 'active' : ''" ><a href="#/items">Items</a></li>
+        <li ng-class="vm.isAboutUs ? 'active' : ''" ><a href="#/about-us">About Us</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

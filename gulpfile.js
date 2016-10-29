@@ -75,7 +75,9 @@ gulp.task('vendor-copy-fonts', function() {
 gulp.task("vendor-concat-css", function() {
   
   var stream = gulp.src(files.vendorCss)
+    .pipe(plugins.sourcemaps.init({ loadMaps: true }))
     .pipe(plugins.concat('vendor.css'))  
+    .pipe(plugins.sourcemaps.write('./')) 
     .pipe(gulp.dest('dist/css/'))
     .pipe(plugins.connect.reload());    
   
@@ -86,7 +88,9 @@ gulp.task("vendor-concat-css", function() {
 gulp.task("vendor-concat-js", function() {
   
   var stream = gulp.src(files.vendorJs)
+    .pipe(plugins.sourcemaps.init({ loadMaps: true }))
     .pipe(plugins.concat('vendor.js'))  
+    .pipe(plugins.sourcemaps.write('./')) 
     .pipe(gulp.dest('dist/js/'))
     .pipe(plugins.connect.reload());    
   
@@ -96,7 +100,7 @@ gulp.task("vendor-concat-js", function() {
 
 gulp.task('app-minify-js', ['minify-templates','copy-json'], function (){
   var stream = gulp.src(files.appJs)
-    .pipe(plugins.sourcemaps.init({ loadMaps: true }))
+    .pipe(plugins.sourcemaps.init())
     .pipe(plugins.ngAnnotate())
     .pipe(plugins.uglify())
     .pipe(plugins.concat('app.js'))
@@ -107,13 +111,30 @@ gulp.task('app-minify-js', ['minify-templates','copy-json'], function (){
   return stream;
 });
 
-gulp.task('minify-templates', function () {
+gulp.task('minify-html', function () {
+  
   var stream = gulp.src(files.appHtml)
     .pipe(plugins.htmlmin({collapseWhitespace: true, empty: true, removeComments: true}))
     .pipe(gulp.dest('dist/js/'))
     .pipe(plugins.connect.reload());
   return stream;  
+  
 });
+
+gulp.task('minify-templates', function () {
+  
+  function fileNameOnly(url){
+    return url.replace(/^.*[\\\/]/, '');
+  };
+    
+  var stream = gulp.src(files.appHtml)
+    .pipe(plugins.angularTemplatecache('app_templates_module.js', { transformUrl: fileNameOnly, moduleSystem: 'IIFE', standalone:true, module:'app.templates'}))
+    .pipe(gulp.dest('scripts/app/templates'))
+    .pipe(plugins.connect.reload());
+  return stream;  
+  
+});
+
 
 gulp.task('copy-json', function() {
   var stream = gulp.src(files.appJson)
@@ -124,7 +145,7 @@ gulp.task('copy-json', function() {
 
 gulp.task('compile-sass', function () {
   var stream = gulp.src(files.appSass)
-    .pipe(plugins.sourcemaps.init({ loadMaps: true }))
+    .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass().on('error', plugins.sass.logError))
     .pipe(plugins.autoprefixer()) 
     .pipe(plugins.cleanCss())    
@@ -139,7 +160,7 @@ gulp.task('minify-css', function () {
   
   
   var stream = gulp.src( files.appCss )
-    .pipe(plugins.sourcemaps.init({ loadMaps: true }))
+    .pipe(plugins.sourcemaps.init())
     .pipe(plugins.concat('styles.css'))
     .pipe(plugins.autoprefixer({
 			browsers: ['last 2 versions'],
