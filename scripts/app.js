@@ -5,7 +5,7 @@
   // Main module
   
   angular
-      .module('app', ['ngRoute', 'app.core'])
+      .module('app', ['ngRoute', 'app.core', 'app.templates'])
       .config(config)
       .run(run);
   
@@ -14,21 +14,21 @@
 
         // route for the home page
         .when('/home', {
-            templateUrl : 'js/app/core/controllers/views/home_view.html',
+            templateUrl : 'home_view.html',
             controller  : 'homeController',
             controllerAs: 'vm'
         })
     
         // route for the home page
         .when('/about-us', {
-            templateUrl : 'js/app/core/controllers/views/about_us_view.html',
+            templateUrl : 'about_us_view.html',
             controller  : 'aboutUsController',
             controllerAs: 'vm'
         })
     
         // route for the home page
         .when('/items', {
-            templateUrl : 'js/app/core/controllers/views/items_view.html',
+            templateUrl : 'items_view.html',
             controller  : 'itemsController',
             controllerAs: 'vm'
         })
