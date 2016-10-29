@@ -9,8 +9,12 @@
   aboutUsController.$inject = ['$scope'];  
 
   function aboutUsController($scope) {
-
-    $scope.hello = 'this is working';
+    
+    var vm = this;
+    
+    vm.isHome = false;
+    vm.isItems = false;
+    vm.isAboutUs = true;
     
     activate();
 

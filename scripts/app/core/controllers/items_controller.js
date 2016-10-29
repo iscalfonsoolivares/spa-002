@@ -10,6 +10,12 @@
 
   function itemsController($scope, requestService, filterService) {
     
+    var vm = this;
+    
+    vm.isHome = false;
+    vm.isItems = true;
+    vm.isAboutUs = false;
+    
     activate();
 
     function activate(){
@@ -21,7 +27,7 @@
     }
 
     function applyRemoteData( data ) {            
-      $scope.users = data;
+      vm.users = data;
       filterService.saveData( data );
     }
     

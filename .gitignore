@@ -3,5 +3,6 @@ bower_components
 dist/js
 dist/css
 dist/fonts
+scripts/app/templates/app_templates_module.js
 .DS_Store
 npm-debug.log
